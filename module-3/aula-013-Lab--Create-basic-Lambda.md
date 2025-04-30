@@ -1,4 +1,6 @@
 
+eval $(ssh-agent -s)
+ssh-add /home/fernando/.ssh/chave-debian10-github
 
 
 1 / 10
@@ -185,5 +187,21 @@ AWS Lambda: Create a Lambda Function
 
 
 What is the default value of timeout in seconds for a Lambda function?
+
+Note: You can retrieve the AWS Credentials for your account anytime by running the showcreds command.
+
+
+
+
+
+
+
+
+
+10 / 10
+
+AWS Lambda: Create a Lambda Function
+
+How many Lambda function exist in the current environment?
 
 Note: You can retrieve the AWS Credentials for your account anytime by running the showcreds command.
