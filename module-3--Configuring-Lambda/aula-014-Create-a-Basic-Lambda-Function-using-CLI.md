@@ -2,6 +2,13 @@
 ---
 
 
+eval $(ssh-agent -s)
+ssh-add /home/fernando/.ssh/chave-debian10-github
+
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------
 
 # Create a Basic Lambda Function using CLI
@@ -351,3 +358,36 @@ fernando@debian10x64:~/cursos/aws/aws-lambda-kodekloud/module-3--Configuring-Lam
 fernando@debian10x64:~/cursos/aws/aws-lambda-kodekloud/module-3--Configuring-Lambda/basicfunction$
 
 ~~~~
+
+
+
+
+
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
+## RESUMO
+
+- Cuidar o Handler ao criar a Lambda via cli, precisa respeitar o nome do arquivo python.
+  --handler basichelloworld.lambda_handler \
+
+- Para invocação via cli, foi necessário o parametro:
+  --cli-binary-format raw-in-base64-out
+
+- Necessário informar a role ao criar a Lambda:
+  --role arn:aws:iam::058264180843:role/lambda-role-testes \
+
+- Para zipar:
+```bash
+zip lambda_function.zip basichelloworld.py
+```
+
+- Se houverem dependencias, o processo para o zip é diferente, precisa incluir o virtualenv e usar outros comandos.
+Ver tutorial: 
+aws/aws-lambda-kodekloud/module-3--Configuring-Lambda/tutorial-criar-lambda-via-aws-cli.md
