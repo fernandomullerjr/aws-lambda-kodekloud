@@ -391,3 +391,28 @@ zip lambda_function.zip basichelloworld.py
 - Se houverem dependencias, o processo para o zip é diferente, precisa incluir o virtualenv e usar outros comandos.
 Ver tutorial: 
 aws/aws-lambda-kodekloud/module-3--Configuring-Lambda/tutorial-criar-lambda-via-aws-cli.md
+
+
+- **Criar a função Lambda:**
+comando com o Handler ajustado adequadamente
+
+```bash
+aws lambda create-function \
+  --function-name MinhaLambdaPython-v2 \
+  --runtime python3.9 \
+  --role arn:aws:iam::058264180843:role/lambda-role-testes \
+  --handler basichelloworld.lambda_handler \
+  --zip-file fileb://lambda_function.zip \
+  --region us-east-1
+```
+
+- 🧪 **Executar teste simples via CLI**
+
+```bash
+aws lambda invoke \
+  --function-name MinhaLambdaPython-v2 \
+  --payload '{"name": "KodeKloud"}' \
+  --cli-binary-format raw-in-base64-out \
+  resposta.json
+cat resposta.json
+```
