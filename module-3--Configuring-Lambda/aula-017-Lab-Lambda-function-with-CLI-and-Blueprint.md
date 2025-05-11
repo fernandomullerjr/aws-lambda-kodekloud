@@ -260,3 +260,55 @@ Note: You can use CLI also for getting ARN
     ]
 }
 (END)
+
+
+
+
+
+
+
+
+
+10 / 11
+
+Create a Lambda function using a blueprint
+
+
+Now, create another function named kodekloudCanary using blueprint "Schedule a periodic check of any URL".
+
+Use the environment variables
+expected = DevOps
+site = https://kodekloud.com/
+
+
+
+If asked, use the existing minuteRule. or create a new rule with rate(1 minute)
+
+
+Note: Resource must be created in us-east-1 (N.Virginia) region.
+
+Function - kodekloudCanary created?
+
+Site - "https://kodekloud.com/"?
+
+Expected - "DevOps"?
+
+
+
+arn:aws:lambda:us-east-1:058264544314:function:kodekloudCanary
+
+
+
+
+
+
+
+
+
+11 / 11
+
+Create a Lambda function using a blueprint
+
+Test the kodekloudCanary function now and check the response. Did the check pass this time?
+
+Note: Do not change the default JSON
